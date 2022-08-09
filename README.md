@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Weather App ekran görüntüleri - openweathermap kullanılmıştır. Api 5gün 3saatte bir olmak üzere 5 güne 40 veri sağlamaktadır. Bu veriler her güne ortak bir veri olması için düzenlenmiştir ve 5 günlük canlı hava durumu yapılmıştır. Şehir seçildiğinde ilgili şehir ismi api ile gönderilir. Şehirin gelen api sonucunda coğrafi lat lon değerleri alınıp hava durumu api'ye gönderilmektedir.
 
-## Available Scripts
+![odevweather1](https://user-images.githubusercontent.com/36435160/183669532-120667ca-bdc9-43f8-b61e-2d830284a2f1.png)
+![odevweather2](https://user-images.githubusercontent.com/36435160/183669574-df7be313-1861-4193-9c30-0b2b37c0bc16.png)
+![odevweather3](https://user-images.githubusercontent.com/36435160/183669609-e3272e09-a873-4181-b798-5905199bdbf0.png)
 
-In the project directory, you can run:
+## Proje tamamen useContext kullanılarak yapılmıştır. Tüm gerekli useContext değerleri tanımlanmıştır.
 
-### `npm start`
+![odevweather6](https://user-images.githubusercontent.com/36435160/183670886-819fbaf6-cc2d-43a5-b80e-77432cb6dd9c.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Şehir ismi formda seçildikten sonra şehir bilgisi useContext ile kaydedilir. Şehir ismi openweathermap ile gönderilip ilgili apiden ilgili şehirin lat lon değerlerinin dönmesi beklenir. Lat lon değerleri döndükten sonra yine openweathermap ile lat lon değerleri gönderilir ve ilgili şehirin hava durumu bilgisinin dönüşü beklenir. Api 5gün 3saatlik veri sunduğundan 40 adet veri gelmektedir. Veriler 5 eşit parçaya bölünerek 5 ayrı günden belirli saat aralıkları alınmıştır.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![odevweather4](https://user-images.githubusercontent.com/36435160/183671751-6e3a1de6-1722-4727-a198-bcc0812e9ae6.png)
 
-### `npm test`
+## Formik kullanılmıştır. Şehir değeri seçilir ve handleSubmit ile useContext'te setCity gönderilir. Varsayılan şehir istanbul'dur.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![odevweather5](https://user-images.githubusercontent.com/36435160/183672130-c509fd94-ace2-449b-926d-3dce616988e1.png)
 
-### `npm run build`
+## WeatherDesign componentinde haftanın 7 günü week dizisinde tanımlanmıştır. Bugünün tarihi new Date() getDay ile alınır. Her bir sonraki gün için +1 eklenir ve mod 7 olarak alınır. Böylece günlerin doğru gelmesi sağlanır.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![odevweather7](https://user-images.githubusercontent.com/36435160/183672782-abe604cd-b34c-487c-bf70-fdd7ef49d5aa.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Veriler listelenir. Tüm veriler ardı ardına birbirini yani api'den gelecek bilgiyi bekler. Beklerken LOADING... yazar ve api bilgisi geldiğinde ilgili bilgi gösterilir. Hava durumu resim bilgisi public dosyasına kaydedilmiştir. Api'den gelen hava durumu bilgisi ile aynı isimdedir. Kelvin olarak gelen sıcaklık bilgisi tam sayıya dönüştürülüp santigrat olarak hesaplanmıştır.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![odevweather8](https://user-images.githubusercontent.com/36435160/183673714-830ec902-a49a-4475-8ebb-ed4743f5cd5d.png)
