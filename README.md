@@ -1,5 +1,7 @@
 # Weather App
 
+## Yayınlandı: https://630f148a08b9a26dcb65be56--rococo-pony-414274.netlify.app/
+
 ## Weather App ekran görüntüleri - openweathermap kullanılmıştır. Api 5gün 3saatte bir olmak üzere 5 güne 40 veri sağlamaktadır. Bu veriler her güne ortak bir veri olması için düzenlenmiştir ve 5 günlük canlı hava durumu yapılmıştır. Şehir seçildiğinde ilgili şehir ismi api ile gönderilir. Şehirin gelen api sonucunda coğrafi lat lon değerleri alınıp hava durumu api'ye gönderilmektedir.
 
 ![odevweather1](https://user-images.githubusercontent.com/36435160/183669532-120667ca-bdc9-43f8-b61e-2d830284a2f1.png)
